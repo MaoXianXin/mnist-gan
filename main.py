@@ -9,6 +9,7 @@ import code
 import random
 from gan import GAN
 from mnist import MNIST
+from tensorflow.examples.tutorials.mnist import input_data
 
 def gen_samples(gan, sessions):
     samples = []
@@ -32,7 +33,7 @@ def main():
     
     args = parser.parse_args()    
     
-    mnist_data = tf.contrib.learn.python.learn.datasets.mnist.read_data_sets(args.mnist_dir, one_hot=True)
+    mnist_data = input_data.read_data_sets(args.mnist_dir, one_hot=True)
 
     if args.train_digits:
         gan = GAN()
