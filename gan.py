@@ -84,7 +84,7 @@ class GAN:
             _, generator_loss = sess.run([self.g_d_optimizer, self.g_d_loss], feed_dict={self.is_training: True, self.g_x: z, self.d_keep_prob: 1.0})
 
             if step % 100 == 0:
-                print "Digit %d Step %d Eval: %f %f" % (digit, step, discriminator_loss[0], generator_loss[0])
+                print("Digit %d Step %d Eval: %f %f" % (digit, step, discriminator_loss[0], generator_loss[0]))
 
             if step % 250 == 0:
                 result = self.eval_generator(sess, 32)
