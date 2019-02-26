@@ -50,7 +50,7 @@ def main():
         samples = [[], []]
         
         mnist = MNIST()
-        for step in range(20000):
+        for step in range(2000000):
             if len(samples[0]) < 50:
                 samples = gen_samples(gan, sessions)
             xs = samples[0][:50]
